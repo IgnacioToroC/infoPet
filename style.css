@@ -1,15 +1,32 @@
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
-    text-align: center;
 } 
 
-.boton{
-    margin: 0 auto;
-    padding: 20px;
-    font-size: 20px;
+.fondo{
+    height: 500px;
+    width: 100%;
+    background-image: url('img/mujer-con-dos-perros-a.jpg.webp');
+    background-size: 100% 100%;  
+    background-repeat: no-repeat;
 }
 
-div{
-    text-align: center;
+.form-control-feedback {
+    position: absolute;
+    padding: 30px;
+    pointer-events: none;
+    
 }
+
+.form-control {
+    padding: 30px;
+    padding-left: 60px!important;
+
+}
+
+.buscador{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: -20px;
+}
+
