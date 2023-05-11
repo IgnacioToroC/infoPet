@@ -149,5 +149,25 @@ $(document).ready(function(){
         }
     ]
 
+ 
+    const palabraBusqueda = 'urgen';
+    // Utilizar LINQ.js para realizar la consulta
+    result = Enumerable.From(Empresa)
+    .Join(TipoEmpresa, empresa => empresa.TipoEmpresa, tipo => tipo.Id, (empresa, tipo) => ({
+        Empresa: empresa.Nombre,
+        TipoEmpresa: tipo.Nombre,
+        TipoProducto: Enumerable.From(Productos)
+            .Join(TipoProducto, producto => producto.TipoProducto, tipoProd => tipoProd.Id, (producto, tipoProd) => tipoProd.Nombre)
+            .FirstOrDefault()
+    }))
+
+        
+    
+    .ToArray();
+
+// Imprimir el resultado
+console.log(result);
+
+
     console.log(TipoEmpresa, Empresa, TipoProducto, Productos)
 })
