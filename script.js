@@ -149,25 +149,46 @@ $(document).ready(function(){
         }
     ]
 
- 
-    const palabraBusqueda = 'urgen';
-    // Utilizar LINQ.js para realizar la consulta
-    result = Enumerable.From(Empresa)
-    .Join(TipoEmpresa, empresa => empresa.TipoEmpresa, tipo => tipo.Id, (empresa, tipo) => ({
-        Empresa: empresa.Nombre,
-        TipoEmpresa: tipo.Nombre,
-        TipoProducto: Enumerable.From(Productos)
-            .Join(TipoProducto, producto => producto.TipoProducto, tipoProd => tipoProd.Id, (producto, tipoProd) => tipoProd.Nombre)
-            .FirstOrDefault()
-    }))
+    const ProductosConNombreEmpresa = Productos.map((producto) => {
+        const empresa = Empresa.find((e) => e.Id === producto.Empresa);
+        const tipoProducto = TipoProducto.find((tp) => tp.Id === producto.TipoProducto);
+        const tipoEmpresa = TipoEmpresa.find((te) => te.Id === empresa.TipoEmpresa);
 
-        
+        const nombreEmpresa = empresa ? empresa.Nombre : "Empresa no encontrada";
+        const nombreTipoProducto = tipoProducto ? tipoProducto.Nombre : "Tipo de producto no encontrado";
+        const nombreTipoEmpresa = tipoEmpresa ? tipoEmpresa.Nombre : "Tipo de empresa no encontrado";
+
+        return {
+            ...producto,
+            NombreEmpresa: nombreEmpresa,
+            NombreTipoProducto: nombreTipoProducto,
+            NombreTipoEmpresa: nombreTipoEmpresa,
+        };
+
+    });
     
-    .ToArray();
-
-// Imprimir el resultado
-console.log(result);
+    console.log(ProductosConNombreEmpresa);
 
 
-    console.log(TipoEmpresa, Empresa, TipoProducto, Productos)
-})
+    $("#buscador").keyup(function(){
+        let filtro =$(this).val();
+
+        const productosFiltrados = ProductosConNombreEmpresa.filter((producto) => {
+            const nombreProducto = producto.Nombre.toLowerCase();
+            const nombreEmpresa = producto.NombreEmpresa.toLowerCase();
+            const nombreTipoProducto = producto.NombreTipoProducto.toLowerCase();
+            const nombreTipoEmpresa = producto.NombreTipoEmpresa.toLowerCase();
+        
+            return (
+                nombreProducto.includes(filtro.toLowerCase()) ||
+                nombreEmpresa.includes(filtro.toLowerCase()) ||
+                nombreTipoProducto.includes(filtro.toLowerCase()) ||
+                nombreTipoEmpresa.includes(filtro.toLowerCase())
+            );
+        });
+
+        console.log(productosFiltrados);
+
+    })
+
+});
