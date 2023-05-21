@@ -15,12 +15,13 @@ body{
     position: absolute;
     padding: 30px;
     pointer-events: none;
-    
+    font-size: 40px;
 }
 
 .form-control {
     padding: 30px;
-    padding-left: 60px!important;
+    padding-left: 80px!important;
+    font-size: 35px;
 
 }
 
@@ -28,6 +29,7 @@ body{
     width: 80%;
     margin: 0 auto;
     margin-top: -20px;
+    margin-bottom: 30px;
 }
 
 .listaProductos{
@@ -52,13 +54,13 @@ body{
 }
 
 .empresaNombre{
-    font-size: 30px;
+    font-size: 40px;
     color: #615d5d;
     font-weight: bold;
 }
 
 .tipoEmpresaNombre{
-    font-size: 14px;
+    font-size: 20px;
     color: #727272;
 }
 
@@ -78,7 +80,7 @@ body{
 }
 
 .productoNombre{
-    font-size: 40px;
+    font-size: 45px;
     color: #484851;
     padding: 20px;
 }
@@ -86,6 +88,6 @@ body{
 .iconoEmpresa{
     width: 50px;
     height: 50px;
-    
+
 }
 
