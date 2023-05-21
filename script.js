@@ -143,7 +143,7 @@ $(document).ready(function(){
             Empresa: 2,
             TipoProducto:3,
             Nombre:"Gati",            
-            Logo: 'notFound.jpg'
+            Logo: 'gati.jpg'
         },
         {
             Id:5,
@@ -210,6 +210,7 @@ $(document).ready(function(){
             const LogoTipoEmpresa = producto.LogoTipoEmpresa.toLowerCase();
             const DireccionEmpresa = producto.DireccionEmpresa.toLowerCase();
             const GeolocalizacionEmpresa = producto.GeolocalizacionEmpresa.toLowerCase();
+            const LogoProducto = producto.Logo;
         
             return (
                 nombreProducto.includes(filtro.toLowerCase()) ||
@@ -239,7 +240,12 @@ $(document).ready(function(){
                             $("<label>").text(p.DireccionEmpresa) 
                         )
                     ),
-                    $("<div>", { "class":"productoNombre"}).text(p.Nombre)
+                    $("<div>", { "class":"productoNombre"}).append(
+                        $("<label>").text(p.Nombre),
+                        $("<img>", { "style": "width: 200px; height: 200px; margin: 0 auto; display: block;", "src":"./img/"+p.Logo, "class":"iconoMapa" }).text(p.Nombre)
+				
+			
+                    )
                 )
 
             )    
