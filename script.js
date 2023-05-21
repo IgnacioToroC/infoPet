@@ -149,8 +149,8 @@ $(document).ready(function(){
             Id:5,
             Empresa: 3,
             TipoProducto:3,
-            Nombre:"Martes dog",            
-            Logo: 'notFound.jpg'
+            Nombre:"Master Dog",            
+            Logo: 'MasterDog.jpg'
         },
         {
             Id:6,
