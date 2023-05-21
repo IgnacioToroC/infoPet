@@ -226,32 +226,41 @@ $(document).ready(function(){
 
         console.log(productosFiltrados);
 
-        productosFiltrados.map((p) =>{
-            $("#listaProductos").append(
-                $("<div>", { "class":"containerProducto"}).append(
-                    $("<div>", { "class":"empresaNombre"}).append(
-                        $("<img>", { "src":"./img/"+p.LogoTipoEmpresa, "class":"iconoEmpresa"}),
-                        $("<label>").text(p.NombreEmpresa)
-                    ),
-                    $("<div>", { "class":"tipoEmpresaNombre"}).text(p.NombreTipoEmpresa),
-                    $("<div>", { "class":"empresaDireccion"}).append(
-                        $("<a>", { "target":"_blank", "href":p.GeolocalizacionEmpresa}).append(
-                            $("<img>", { "src":"./img/ubicacion.png", "class":"iconoMapa"}),
-                            $("<label>").text(p.DireccionEmpresa) 
+        if(productosFiltrados.length > 0){
+            productosFiltrados.map((p) =>{
+                $("#listaProductos").append(
+                    $("<div>", { "class":"containerProducto"}).append(
+                        $("<div>", { "class":"empresaNombre"}).append(
+                            $("<img>", { "src":"./img/"+p.LogoTipoEmpresa, "class":"iconoEmpresa"}),
+                            $("<label>").text(p.NombreEmpresa)
+                        ),
+                        $("<div>", { "class":"tipoEmpresaNombre"}).text(p.NombreTipoEmpresa),
+                        $("<div>", { "class":"empresaDireccion"}).append(
+                            $("<a>", { "target":"_blank", "href":p.GeolocalizacionEmpresa}).append(
+                                $("<img>", { "src":"./img/ubicacion.png", "class":"iconoMapa"}),
+                                $("<label>").text(p.DireccionEmpresa) 
+                            )
+                        ),
+                        $("<div>", { "class":"productoNombre"}).append(
+                            $("<label>").text(p.Nombre),
+                            $("<img>", { "style": "width: 200px; height: 200px; margin: 0 auto; display: block;", "src":"./img/"+p.Logo, "class":"iconoMapa" }).text(p.Nombre)
+                    
+                
                         )
-                    ),
-                    $("<div>", { "class":"productoNombre"}).append(
-                        $("<label>").text(p.Nombre),
-                        $("<img>", { "style": "width: 200px; height: 200px; margin: 0 auto; display: block;", "src":"./img/"+p.Logo, "class":"iconoMapa" }).text(p.Nombre)
-				
-			
                     )
-                )
+    
+                )    
+                console.log(p.LogoTipoEmpresa)
+    
+            })
 
-            )    
-            console.log(p.LogoTipoEmpresa)
+        }else{
+            $("#listaProductos").append(
+                $("<div>", {"style":"margin-bottom: 20px; font-size: 40px; color: rgb(82, 82, 83);font-weight: 500;"}).text("No se encuentran productos :(")
+            )
+        }
 
-        })
+     
 
     })
 
