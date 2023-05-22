@@ -195,6 +195,10 @@ $(document).ready(function(){
     
    console.log(ProductosConNombreEmpresa);
 
+    $("#btnTinderPet").click(function(){
+        window.location.href="./TinderPet/index.html";
+        
+    })
 
     $("#buscador").keyup(function(){
 
@@ -222,8 +226,6 @@ $(document).ready(function(){
             );
         });
 
-
-
         console.log(productosFiltrados);
 
         if(productosFiltrados.length > 0){
@@ -244,11 +246,8 @@ $(document).ready(function(){
                         $("<div>", { "class":"productoNombre"}).append(
                             $("<label>").text(p.Nombre),
                             $("<img>", { "style": "width: 200px; height: 200px; margin: 0 auto; display: block;", "src":"./img/"+p.Logo, "class":"iconoMapa" }).text(p.Nombre)
-                    
-                
                         )
                     )
-    
                 )    
                 console.log(p.LogoTipoEmpresa)
     
@@ -259,9 +258,6 @@ $(document).ready(function(){
                 $("<div>", {"style":"margin-bottom: 20px; font-size: 40px; color: rgb(82, 82, 83);font-weight: 500;"}).text("No se encuentran productos :(")
             )
         }
-
-     
-
     })
 
 });
