@@ -105,7 +105,7 @@ body{
   .PruebaSlide {
     flex: 0 0 400px!important;
     margin-right: 10px!important;
-
+    border-radius: 40px;
     background-color: #ffffff;
     height: 400px;
     padding: 20px;
