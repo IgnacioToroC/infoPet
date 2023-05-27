@@ -196,11 +196,7 @@ $(document).ready(function(){
    //console.log(ProductosConNombreEmpresa);
 
     $("#btnTinderPet").click(function(){
-        window.location.href="./tinderPet/index.html";
-    })
-
-    $(".btnTinderPet").click(function(){
-        window.location.href="./tinderPet/index.html";
+        window.location.href="./TinderPet/index.html";
     })
 
     $("#buscador").keyup(function(){
