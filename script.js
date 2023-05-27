@@ -269,7 +269,7 @@ let startPos = 0;
 let currentTranslate = 0;
 let prevTranslate = 0;
 let animationID = 0;
-
+let currentIndex =0;
 carouselInner.addEventListener('mousedown', dragStart);
 carouselInner.addEventListener('mouseup', dragEnd);
 carouselInner.addEventListener('mouseleave', dragEnd);
