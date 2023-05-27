@@ -199,6 +199,10 @@ $(document).ready(function(){
         window.location.href="./TinderPet/index.html";
     })
 
+    $(".btnTinderPet").click(function(){
+        window.location.href="./TinderPet/index.html";
+    })
+
     $("#buscador").keyup(function(){
 
         $("#listaProductos").empty();
