@@ -168,11 +168,11 @@ $(document).ready(function(){
         const tipoProducto = TipoProducto.find((tp) => tp.Id === producto.TipoProducto);
         const tipoEmpresa = TipoEmpresa.find((te) => te.Id === empresa.TipoEmpresa);
         
-        console.log("producto",producto)
-        console.log("empresa",empresa)
-        console.log("tipoProducto",tipoProducto)
-        console.log("tipoEmpresa",tipoEmpresa)
-        console.log("----")
+        // console.log("producto",producto)
+        // console.log("empresa",empresa)
+        // console.log("tipoProducto",tipoProducto)
+        // console.log("tipoEmpresa",tipoEmpresa)
+        // console.log("----")
 
         const nombreEmpresa = empresa ? empresa.Nombre : "Empresa no encontrada"; 
         const direccionEmpresa = empresa ? empresa.Direccion : "Empresa no encontrada";       
@@ -193,11 +193,10 @@ $(document).ready(function(){
 
     });
     
-   console.log(ProductosConNombreEmpresa);
+   //console.log(ProductosConNombreEmpresa);
 
     $("#btnTinderPet").click(function(){
         window.location.href="./TinderPet/index.html";
-        
     })
 
     $("#buscador").keyup(function(){
@@ -226,7 +225,7 @@ $(document).ready(function(){
             );
         });
 
-        console.log(productosFiltrados);
+        // console.log(productosFiltrados);
 
         if(productosFiltrados.length > 0){
             productosFiltrados.map((p) =>{
@@ -249,7 +248,7 @@ $(document).ready(function(){
                         )
                     )
                 )    
-                console.log(p.LogoTipoEmpresa)
+                // console.log(p.LogoTipoEmpresa)
     
             })
 
