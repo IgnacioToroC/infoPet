@@ -2,13 +2,13 @@
 const profiles = [
 
     {
-    picture: 'disfraz-de-joker-para-perro.jpg',
+    picture: 'img/disfraz-de-joker-para-perro.jpg',
     username: 'Usuario 1',
     age: 'Edad 1',
     description: 'Descripción del perfil 1'
   },
   {
-    picture: '51IgmIamcrS._AC_SX679_.jpg',
+    picture: 'img/51IgmIamcrS._AC_SX679_.jpg',
     username: 'Usuario 2',
     age: 'Edad 2',
     description: 'Descripción del perfil 2'
@@ -16,7 +16,7 @@ const profiles = [
   // Agregar los demás perfiles aquí
   // ...
   {
-    picture: 'descarga.jpeg',
+    picture: 'img/descarga.jpeg',
     username: 'Usuario 3',
     age: 'Edad 3',
     description: 'Descripción del perfil 3'
@@ -24,7 +24,7 @@ const profiles = [
   // Agregar los demás perfiles aquí
   // ...
   {
-    picture: 'F5CAZDOLNVBFHLXPPKS3NNYJEM.jpg',
+    picture: 'img/F5CAZDOLNVBFHLXPPKS3NNYJEM.jpg',
     username: 'Usuario 4',
     age: 'Edad 4',
     description: 'Descripción del perfil 5'
@@ -32,7 +32,7 @@ const profiles = [
   // Agregar los demás perfiles aquí
   // ...
   {
-    picture: 'descarga (1).jpeg',
+    picture: 'img/descarga (1).jpeg',
     username: 'Usuario 5',
     age: 'Edad 5',
     description: 'Descripción del perfil 5'
@@ -40,7 +40,7 @@ const profiles = [
   // Agregar los demás perfiles aquí
   // ...
   {
-    picture: 'descarga (2).jpeg',
+    picture: 'img/descarga (2).jpeg',
     username: 'Usuario 6',
     age: 'Edad 6',
     description: 'Descripción del perfil 6'
@@ -48,7 +48,7 @@ const profiles = [
   // Agregar los demás perfiles aquí
   // ...
   {
-    picture: 'Dog-clothes.jpg',
+    picture: 'img/Dog-clothes.jpg',
     username: 'Usuario 7',
     age: 'Edad 7',
     description: 'Descripción del perfil 7'
@@ -56,13 +56,13 @@ const profiles = [
   // Agregar los demás perfiles aquí
   // ...
   {
-    picture: 'D_NQ_NP_899980-MLC48699642859_122021-O.jpg',
+    picture: 'img/D_NQ_NP_899980-MLC48699642859_122021-O.jpg',
     username: 'Usuario 8',
     age: 'Edad 8',
     description: 'Descripción del perfil 8'
   },
     {
-    picture: 'perritosexy1.jpg',
+    picture: 'img/perritosexy1.jpg',
     username: 'Cosita',
     age: '2 años',
     description: 'Soy Cosita, tengo las vacunas al día, soy limpiecito, solo hago caca en tierrita, me gusta ver las estrellas y soy Tauro'

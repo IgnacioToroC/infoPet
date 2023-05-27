@@ -91,3 +91,30 @@ body{
 
 }
 
+.PruebaCarousel-container {
+    width: 100% !important;
+    overflow: hidden!important;
+    margin-bottom: 50px;
+  }
+  
+  .PruebaCarousel-inner {
+    display: flex!important;
+    transition: transform 0.3s ease!important;
+  }
+  
+  .PruebaSlide {
+    flex: 0 0 400px!important;
+    margin-right: 10px!important;
+
+    background-color: #ffffff;
+    height: 400px;
+    padding: 20px;
+    padding-top: 5px;
+  }
+  
+  .slide img {
+    width: 100%!important;
+    height: auto!important;
+    display: block!important;
+  }
+  
