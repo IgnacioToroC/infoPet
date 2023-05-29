@@ -259,7 +259,7 @@ $(document).ready(function(){
         }
     })
 
-});
+    
 const carouselContainer = document.querySelector('.PruebaCarousel-container');
 const carouselInner = document.querySelector('.PruebaCarousel-inner');
 const slides = Array.from(carouselInner.getElementsByClassName('PruebaSlide'));
@@ -344,3 +344,5 @@ btnTinderPet.addEventListener("click", ()=>{
 }) 
 
 scrollCarousel();
+
+});
