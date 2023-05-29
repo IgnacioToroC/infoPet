@@ -261,89 +261,99 @@ $(document).ready(function(){
 });
 
     
-const carouselContainer = document.querySelector('.PruebaCarousel-container');
-const carouselInner = document.querySelector('.PruebaCarousel-inner');
-const slides = Array.from(carouselInner.getElementsByClassName('PruebaSlide'));
-let isDragging = false;
-let startPos = 0;
-let currentTranslate = 0;
-let prevTranslate = 0;
-let animationID = 0;
-let currentIndex =0;
-carouselInner.addEventListener('mousedown', dragStart);
-carouselInner.addEventListener('mouseup', dragEnd);
-carouselInner.addEventListener('mouseleave', dragEnd);
-carouselInner.addEventListener('mousemove', drag);
+// const carouselContainer = document.querySelector('.PruebaCarousel-container');
+// const carouselInner = document.querySelector('.PruebaCarousel-inner');
+// const slides = Array.from(carouselInner.getElementsByClassName('PruebaSlide'));
+// let isDragging = false;
+// let startPos = 0;
+// let currentTranslate = 0;
+// let prevTranslate = 0;
+// let animationID = 0;
+// let currentIndex =0;
+// carouselInner.addEventListener('mousedown', dragStart);
+// carouselInner.addEventListener('mouseup', dragEnd);
+// carouselInner.addEventListener('mouseleave', dragEnd);
+// carouselInner.addEventListener('mousemove', drag);
 
-carouselInner.addEventListener('touchstart', dragStart);
-carouselInner.addEventListener('touchend', dragEnd);
-carouselInner.addEventListener('touchmove', drag);
+// carouselInner.addEventListener('touchstart', dragStart);
+// carouselInner.addEventListener('touchend', dragEnd);
+// carouselInner.addEventListener('touchmove', drag);
 
-let btnTinderPet = document.getElementById("btnTinderPet");
-console.log("btnTinderPet", btnTinderPet)
-btnTinderPet.addEventListener("touchstart", ()=>{
-    window.location.href="./TinderPet/index.html";
-}) 
-
-
-function dragStart(event) {
-  event.preventDefault();
-  console.log(event)
-  if (event.type === 'touchstart') {
-    startPos = event.touches[0].clientX;
-  } else {
-    startPos = event.clientX;
-  }
-
-  isDragging = true;
-
-  carouselInner.style.cursor = 'grabbing';
-
-  prevTranslate = currentTranslate;
-
-  cancelAnimationFrame(animationID);
-}
-
-function drag(event) {
-  if (isDragging) {
-    const currentPosition = event.type === 'touchmove' ? event.touches[0].clientX : event.clientX;
-    const diff = currentPosition - startPos;
-    currentTranslate = prevTranslate + diff;
-
-    carouselInner.style.transform = `translateX(${currentTranslate}px)`;
-  }
-}
-
-function dragEnd() {
-  isDragging = false;
-
-  carouselInner.style.cursor = 'grab';
-
-  const slideWidth = slides[0].offsetWidth;
-  const containerWidth = carouselContainer.offsetWidth;
-
-  // Calculamos la posición actual del carrusel en relación al ancho de cada slide
-  currentIndex = Math.round(-currentTranslate / slideWidth);
-
-  // Calculamos el desplazamiento máximo permitido
-  const maxTranslate = -(slides.length - 1) * slideWidth;
-
-  // Ajustamos la posición actual dentro de los límites
-  currentTranslate = Math.max(Math.min(currentTranslate, 0), maxTranslate);
-
-  carouselInner.style.transform = `translateX(${currentTranslate}px)`;
-
-  // Reiniciamos el desplazamiento automático
-  animationID = requestAnimationFrame(scrollCarousel);
-}
-
-function scrollCarousel() {
-  const slideWidth = slides[0].offsetWidth;
-  currentTranslate = -currentIndex * slideWidth;
-  carouselInner.style.transform = `translateX(${currentTranslate}px)`;
-}
-
-window.addEventListener('resize', scrollCarousel);
+// let btnTinderPet = document.getElementById("btnTinderPet");
+// console.log("btnTinderPet", btnTinderPet)
+// btnTinderPet.addEventListener("touchstart", ()=>{
+//     window.location.href="./TinderPet/index.html";
+// }) 
 
 
-scrollCarousel();
+// function dragStart(event) {
+//   event.preventDefault();
+//   console.log(event)
+//   if (event.type === 'touchstart') {
+//     startPos = event.touches[0].clientX;
+//   } else {
+//     startPos = event.clientX;
+//   }
+
+//   isDragging = true;
+
+//   carouselInner.style.cursor = 'grabbing';
+
+//   prevTranslate = currentTranslate;
+
+//   cancelAnimationFrame(animationID);
+// }
+
+// function drag(event) {
+//   if (isDragging) {
+//     const currentPosition = event.type === 'touchmove' ? event.touches[0].clientX : event.clientX;
+//     const diff = currentPosition - startPos;
+//     currentTranslate = prevTranslate + diff;
+
+//     carouselInner.style.transform = `translateX(${currentTranslate}px)`;
+//   }
+// }
+
+// function dragEnd() {
+//   isDragging = false;
+
+//   carouselInner.style.cursor = 'grab';
+
+//   const slideWidth = slides[0].offsetWidth;
+//   const containerWidth = carouselContainer.offsetWidth;
+
+//   // Calculamos la posición actual del carrusel en relación al ancho de cada slide
+//   currentIndex = Math.round(-currentTranslate / slideWidth);
+
+//   // Calculamos el desplazamiento máximo permitido
+//   const maxTranslate = -(slides.length - 1) * slideWidth;
+
+//   // Ajustamos la posición actual dentro de los límites
+//   currentTranslate = Math.max(Math.min(currentTranslate, 0), maxTranslate);
+
+//   carouselInner.style.transform = `translateX(${currentTranslate}px)`;
+
+//   // Reiniciamos el desplazamiento automático
+//   animationID = requestAnimationFrame(scrollCarousel);
+// }
+
+// function scrollCarousel() {
+//   const slideWidth = slides[0].offsetWidth;
+//   currentTranslate = -currentIndex * slideWidth;
+//   carouselInner.style.transform = `translateX(${currentTranslate}px)`;
+// }
+
+// window.addEventListener('resize', scrollCarousel);
+
+
+// scrollCarousel();
+
+var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    grabCursor: true,
+  });
