@@ -279,9 +279,16 @@ carouselInner.addEventListener('touchstart', dragStart);
 carouselInner.addEventListener('touchend', dragEnd);
 carouselInner.addEventListener('touchmove', drag);
 
+let btnTinderPet = document.getElementById("btnTinderPet");
+console.log("btnTinderPet", btnTinderPet)
+btnTinderPet.addEventListener("touchstart", ()=>{
+    window.location.href="./TinderPet/index.html";
+}) 
+
+
 function dragStart(event) {
   event.preventDefault();
-
+  console.log(event)
   if (event.type === 'touchstart') {
     startPos = event.touches[0].clientX;
   } else {
@@ -338,10 +345,5 @@ function scrollCarousel() {
 
 window.addEventListener('resize', scrollCarousel);
 
-let btnTinderPet = document.getElementById("btnTinderPet");
-console.log("btnTinderPet", btnTinderPet)
-btnTinderPet.addEventListener("touchstart", ()=>{
-    window.location.href="./TinderPet/index.html";
-}) 
 
 scrollCarousel();
