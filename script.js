@@ -195,9 +195,9 @@ $(document).ready(function(){
     
    //console.log(ProductosConNombreEmpresa);
 
-    $("#btnTinderPet").click(function(){
-        window.location.href="./TinderPet/index.html";
-    })
+    // $("#btnTinderPet").click(function(){
+    //     window.location.href="./TinderPet/index.html";
+    // })
 
     $("#buscador").keyup(function(){
 
@@ -336,5 +336,11 @@ function scrollCarousel() {
 }
 
 window.addEventListener('resize', scrollCarousel);
+
+let btnTinderPet = document.getElementById("btnTinderPet");
+console.log("btnTinderPet", btnTinderPet)
+btnTinderPet.addEventListener("click", ()=>{
+    window.location.href="./TinderPet/index.html";
+}) 
 
 scrollCarousel();
