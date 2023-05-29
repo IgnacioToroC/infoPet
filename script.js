@@ -339,7 +339,7 @@ window.addEventListener('resize', scrollCarousel);
 
 let btnTinderPet = document.getElementById("btnTinderPet");
 console.log("btnTinderPet", btnTinderPet)
-btnTinderPet.addEventListener("click", ()=>{
+btnTinderPet.addEventListener("touchstart", ()=>{
     window.location.href="./TinderPet/index.html";
 }) 
 
