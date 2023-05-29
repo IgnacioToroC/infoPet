@@ -258,6 +258,7 @@ $(document).ready(function(){
             )
         }
     })
+});
 
     
 const carouselContainer = document.querySelector('.PruebaCarousel-container');
@@ -344,5 +345,3 @@ btnTinderPet.addEventListener("touchstart", ()=>{
 }) 
 
 scrollCarousel();
-
-});
