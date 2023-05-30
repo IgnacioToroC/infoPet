@@ -199,9 +199,7 @@ $(document).ready(function(){
     //     window.location.href="./TinderPet/index.html";
     // })
 
-    $("#llamar").click(function(){
-        window.open('tel:995997838' );
-    })  
+
 
     $("#buscador").keyup(function(){
 
@@ -364,3 +362,9 @@ var swiper = new Swiper('.swiper-container', {
 
     
   });
+
+  const llamar = document.getElementById("llamar")
+  llamar.addEventListener("touchstart", () => {
+
+      window.open('tel:995997838' );
+  })  
