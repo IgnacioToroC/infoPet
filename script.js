@@ -199,6 +199,10 @@ $(document).ready(function(){
     //     window.location.href="./TinderPet/index.html";
     // })
 
+    $("#llamar").click(function(){
+        window.open('tel:995997838' );
+    })  
+
     $("#buscador").keyup(function(){
 
         $("#listaProductos").empty();
